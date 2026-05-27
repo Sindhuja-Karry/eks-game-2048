@@ -1,0 +1,6 @@
+*.pem
+*.key
+spacelift_key
+.env
+.aws/
+kubeconfig
