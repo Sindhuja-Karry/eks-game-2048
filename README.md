@@ -5,6 +5,7 @@ Deploying the classic 2048 game to Amazon EKS (Kubernetes on AWS), exposed to th
 ## eks-game-2048
 
 "2048_full.yaml"    # all Kubernetes resources for the app, in one manifest
+
 "iam_policy.json"    # AWS IAM permissions needed by the ALB controller
 
 ## Step-by-step: what `2048_full.yaml` creates
