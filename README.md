@@ -43,22 +43,22 @@ Without this policy attached to the controller's IAM role, the Ingress in step 4
 
 ## How to deploy, step by step
 
-# 1. Create the IAM policy the Load Balancer Controller needs
+1. Create the IAM policy the Load Balancer Controller needs
 aws iam create-policy \
   --policy-name AWSLoadBalancerControllerIAMPolicy \
   --policy-document file://iam_policy.json
 
-# 2. Install the AWS Load Balancer Controller on your cluster,
-#    attaching the policy above to its service account (via IRSA)
-#    — see AWS's official install guide for the full command set
+2. Install the AWS Load Balancer Controller on your cluster,
+   attaching the policy above to its service account (via IRSA)
+   see AWS's official install guide for the full command set
 
-# 3. Deploy the game — creates the namespace, Deployment, Service, and Ingress
+3. Deploy the game — creates the namespace, Deployment, Service, and Ingress
 kubectl apply -f 2048_full.yaml
 
-# 4. Confirm the pods are running
+4. Confirm the pods are running
 kubectl get pods -n game-2048
 
-# 5. Get the ALB's public URL once it's provisioned 
+5. Get the ALB's public URL once it's provisioned 
 kubectl get ingress -n game-2048
 
 Open the ADDRESS shown by the last command in a browser to play the game.
